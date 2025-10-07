@@ -1,0 +1,594 @@
+[
+  {
+    "id": "1",
+    "titulo": "Jhonny Rivera 20 Años del Rey del Pueblo",
+    "categoria": "CONCIERTO",
+    "fecha": "2025-11-29T20:00:00-05:00",
+    "lugar": "Arena Cañaveralejo",
+    "imagen": "https://cdn.eventry.co/eventos/2449/home.jpg?1752506426",
+    "orientacion": "vertical",
+    "duracion": "3 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 67200,
+    "precioPts": 672,
+    "descripcion": "Concierto especial celebrando 20 años de carrera del Rey del Pueblo. Presentación en el Arena Cañaveralejo con los mejores éxitos de Jhonny Rivera. Edad mínima 18 años.",
+    "organizador": "ADVANZZ ATTEND SAS",
+    "edadMinima": "18 años",
+    "precios": {
+      "palcoElIntenso": 2800000,
+      "palcoSoySoltero": 2240000,
+      "palcoComprendiQueTePerdi": 1680000,
+      "palcoTeExtrano": 1344000,
+      "palcoCallejonTeDoyMiVida": 168000,
+      "graderiaMejorSolito": 67200
+    }
+  },
+  {
+    "id": "2",
+    "titulo": "En Clave de Cine: 'Bajo el Cielo Antioqueño'",
+    "categoria": "CULTURA",
+    "fecha": "2025-01-15T16:00:00-05:00",
+    "lugar": "Cinemateca - Museo La Tertulia",
+    "imagen": "https://cdn.eventry.co/venues/240/teatrohome.jpg?1",
+    "orientacion": "vertical",
+    "duracion": "2 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 14000,
+    "precioPts": 140,
+    "descripcion": "Proyección de la película 'Bajo el Cielo Antioqueño' en la Cinemateca del Museo La Tertulia. Funciones de jueves a domingo con horarios a las 4:00 p.m., 6:00 p.m. y 8:00 p.m.",
+    "organizador": "Museo La Tertulia",
+    "edadMinima": "Todas las edades",
+    "horarios": [
+      "Jueves: 4:00 p.m., 6:00 p.m., 8:00 p.m.",
+      "Viernes: 4:00 p.m., 6:00 p.m., 8:00 p.m.",
+      "Sábado: 4:00 p.m., 6:00 p.m., 8:00 p.m.",
+      "Domingo: 4:00 p.m., 6:00 p.m., 8:00 p.m."
+    ],
+    "precios": {
+      "general": 14000,
+      "estudiantes": "Tarifa especial",
+      "amigosTertulia": "Tarifa especial",
+      "comfandi": "Tarifa especial",
+      "univalle": "Tarifa especial"
+    },
+    "ubicacion": "CRA. 1 #5-105, Normandia Sebastián de Belalcázar, Cali - Valle del Cauca",
+    "aforo": 248,
+    "coverService": 2000
+  },
+  {
+    "id": "3",
+    "titulo": "Museo La Tertulia - Octubre 2025",
+    "categoria": "CULTURA",
+    "fecha": "2025-10-01T10:00:00-05:00",
+    "lugar": "Museo La Tertulia",
+    "imagen": "https://cdn.eventry.co/eventos/2588/home.jpg?1759242642",
+    "orientacion": "vertical",
+    "duracion": "Todo el día",
+    "entrada": "Con boleto",
+    "precioCOP": 26000,
+    "precioPts": 260,
+    "descripcion": "Exposiciones especiales en el Museo La Tertulia durante octubre 2025. Incluye 'Cuerpo Transgresivo. Rosemberg Sandoval' y 'VIII Salón BAT de Arte Popular'. Horarios: Martes 10am-6pm, Miércoles a Sábado 10am-7pm, Domingos 2pm-6pm.",
+    "organizador": "Corporación Museo La Tertulia",
+    "edadMinima": "12 años",
+    "horarios": {
+      "martes": "10:00 AM - 6:00 PM",
+      "miercoles": "10:00 AM - 7:00 PM",
+      "jueves": "10:00 AM - 7:00 PM",
+      "viernes": "10:00 AM - 7:00 PM",
+      "sabado": "10:00 AM - 7:00 PM",
+      "domingo": "2:00 PM - 6:00 PM"
+    },
+    "precios": {
+      "general": 26000,
+      "nacionales": 17000,
+      "entradaLibre": "VIII Salón BAT de Arte Popular"
+    },
+    "ubicacion": "Av. Colombia # 5 - 105, Cali - Valle del Cauca",
+    "aforo": 700,
+    "coverService": 2000,
+    "exposiciones": [
+      "Cuerpo Transgresivo. Rosemberg Sandoval",
+      "VIII Salón BAT de Arte Popular, Colombia diversidad cultural y natural en Cali"
+    ],
+    "tarifasEspeciales": [
+      "Amigos Tertulia",
+      "Comfandi", 
+      "Bancolombia",
+      "Metrocali"
+    ],
+    "fechaInicio": "2025-10-01T10:00:00-05:00",
+    "fechaFin": "2025-10-31T19:00:00-05:00"
+  },
+  {
+    "id": "4",
+    "titulo": "Héroes del Océano 11 OCT",
+    "categoria": "DEPORTIVO",
+    "fecha": "2025-10-11T15:00:00-05:00",
+    "lugar": "La Estación Centro Comercial",
+    "imagen": "https://cdn.eventry.co/eventos/2601/home.jpg?1759759709",
+    "orientacion": "vertical",
+    "duracion": "3 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 35000,
+    "precioPts": 350,
+    "descripcion": "Actividad deportiva familiar en La Estación Centro Comercial. Experiencia de rescate marino para toda la familia. Los niños menores de 6 años deben ingresar con un adulto responsable.",
+    "organizador": "La Estación Centro Comercial",
+    "edadMinima": "Todas las edades",
+    "horario": "Sábado 3:00 PM - 6:00 PM",
+    "precios": {
+      "rescateMarino": 35000,
+      "acompanante": 8000
+    },
+    "ubicacion": "La Estación Centro Comercial, Comuna 4, Cali - Valle del Cauca",
+    "aforo": 150,
+    "coverService": {
+      "rescateMarino": 3500,
+      "acompanante": 1000
+    },
+    "capacidad": {
+      "rescateMarino": 100,
+      "acompanante": 50
+    },
+    "tipoEvento": "Actividad Deportiva",
+    "tipoBoleto": "Suelto & Digital",
+    "restricciones": "Los niños menores de 6 años deben ingresar con un adulto responsable",
+    "servicios": {
+      "comida": false,
+      "bebidasAlcoholicas": false,
+      "aptoEmbarazadas": true,
+      "movilidadReducida": true
+    }
+  },
+  {
+    "id": "5",
+    "titulo": "Pamela Ospina - Sin Vergüenza",
+    "categoria": "CULTURA",
+    "fecha": "2025-10-24T20:15:00-05:00",
+    "lugar": "Teatro Jorge Isaacs",
+    "imagen": "https://cdn.eventry.co/eventos/2525/home.jpg?1759256725",
+    "orientacion": "vertical",
+    "duracion": "2 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 70000,
+    "precioPts": 700,
+    "descripcion": "Show de entretenimiento con Pamela Ospina en el Teatro Jorge Isaacs. Presentación especial 'Sin Vergüenza' con comedia y entretenimiento para adultos.",
+    "organizador": "John Alberth Saavedra Gonzalez",
+    "edadMinima": "18 años",
+    "horario": "Viernes 8:15 PM",
+    "precios": {
+      "platea": 70000,
+      "palcoUno": 60000,
+      "palcoDos": 50000
+    },
+    "ubicacion": "Carrera 3 #12-28, San Pedro, Cali - Valle del Cauca",
+    "aforo": 956,
+    "coverService": {
+      "platea": 7000,
+      "palcoUno": 5000,
+      "palcoDos": 5000
+    },
+    "capacidad": {
+      "platea": 536,
+      "palcoUno": 198,
+      "palcoDos": 222
+    },
+    "tipoEvento": "Entretenimiento",
+    "tipoBoleto": "Suelto & Digital",
+    "codigoEvento": "MPZ715",
+    "servicios": {
+      "comida": false,
+      "bebidasAlcoholicas": false,
+      "aptoEmbarazadas": true,
+      "movilidadReducida": true
+    }
+  },
+  {
+    "id": "6",
+    "titulo": "Evento Emprendedores Startup: Conecta con Inversionistas de Cali y el Mundo",
+    "categoria": "ACADEMICO",
+    "fecha": "2025-12-15T09:00:00-05:00",
+    "lugar": "Virtual (Online) - Cali",
+    "imagen": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1045189203%2F2766106491401%2F1%2Foriginal.20250603-205205?w=400&auto=format%2Ccompress&q=75&sharp=10&s=4ce66964258c0bf9a192074fa61d50a5",
+    "orientacion": "vertical",
+    "duracion": "4 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 80000,
+    "precioPts": 800,
+    "descripcion": "Evento educativo para fundadores de Startup en Cali sobre Venture Capital. Aprende sobre financiamiento, conecta con inversionistas locales e internacionales. Incluye lista con más de 20,000 contactos de inversionistas.",
+    "organizador": "HM Events",
+    "edadMinima": "18 años",
+    "horario": "9:00 AM - 1:00 PM",
+    "precios": {
+      "general": 80000,
+      "earlyBird": "Descuento disponible"
+    },
+    "ubicacion": "Virtual (Online) - Cali, 760041",
+    "tipoEvento": "Conferencia",
+    "tipoBoleto": "Digital",
+    "modalidad": "Virtual",
+    "temas": [
+      "Conceptos básicos del Venture Capital",
+      "Etapas de inversión",
+      "Qué buscan los inversionistas",
+      "Cómo preparar tu pitch",
+      "Proceso de due diligence",
+      "Conectar con inversionistas"
+    ],
+    "incluye": [
+      "Lista con más de 20,000 contactos de inversionistas",
+      "Material educativo sobre Venture Capital",
+      "Networking con otros emprendedores",
+      "Acceso a recursos adicionales"
+    ],
+    "dirigidoA": [
+      "Fundadores de Startup",
+      "Emprendedores en Cali",
+      "Personas interesadas en Venture Capital",
+      "Empresarios buscando financiamiento"
+    ]
+  },
+  {
+    "id": "7",
+    "titulo": "Friday Night Street Salsa and Bar Crawl in Cali, Colombia",
+    "categoria": "CULTURA",
+    "fecha": "2025-12-20T20:30:00-05:00",
+    "lugar": "Granada - Zona Norte de Cali",
+    "imagen": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1140848133%2F981516575033%2F1%2Foriginal.20251001-020347?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=1.0&fp-y=0.667&s=4cbdb7f727a831a2d693212224f42f30",
+    "orientacion": "vertical",
+    "duracion": "4 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 140000,
+    "precioPts": 1400,
+    "descripcion": "Bar crawl nocturno por la zona norte de Cali incluyendo bares locales, Calle del Sabor (salsa street), club de salsa y el club más grande de Cali. Experiencia auténtica de vida nocturna caleña con descuentos especiales.",
+    "organizador": "5AM Club Tours Colombia",
+    "edadMinima": "18 años",
+    "horario": "8:30 PM - 12:30 AM",
+    "precios": {
+      "general": 140000,
+      "descuentos": "Disponibles en cada bar"
+    },
+    "ubicacion": "Granada - Zona Norte de Cali, Valle del Cauca",
+    "tipoEvento": "Bar Crawl / Tour Nocturno",
+    "tipoBoleto": "Digital",
+    "modalidad": "Presencial",
+    "agenda": [
+      "8:30 PM - 9:30 PM: Bar #1 - 10% descuento en la cuenta",
+      "9:30 PM - 10:30 PM: Calle del Sabor - Bebidas en la calle",
+      "11:00 PM - 12:00 AM: Club de Salsa - Cover con descuento 10k COP",
+      "12:30 AM: Dropoff en La Pergola (cover completo)"
+    ],
+    "incluye": [
+      "10% descuento en el primer bar",
+      "Bebidas disponibles en la calle",
+      "Cover con descuento en club de salsa (10k COP)",
+      "Acceso a La Pergola (club más grande de Cali)",
+      "Experiencia con locales y turistas",
+      "Práctica de español con colombianos"
+    ],
+    "requisitos": [
+      "Hombres: pantalones obligatorios para el último club",
+      "Zapatos cerrados obligatorios",
+      "No se permite: trajes de baño, sandalias, gorras, ropa deportiva, gafas de sol",
+      "Código de vestimenta estricto"
+    ],
+    "ubicaciones": [
+      "891 BAR - Carrera 2 Oeste #1-37",
+      "Calle del Sabor (Salsa Street)",
+      "Club de Salsa Granada",
+      "La Pergola (club más grande de Cali)"
+    ],
+    "beneficios": [
+      "Experiencia auténtica de locales",
+      "Conectar con colombianos",
+      "Conocer la vida nocturna de Cali",
+      "Aprender sobre la cultura salsa",
+      "Networking con otros participantes"
+    ]
+  },
+  {
+    "id": "8",
+    "titulo": "Festival Internacional de Cine de Cali",
+    "categoria": "CULTURA",
+    "fecha": "2025-10-15T18:00:00-05:00",
+    "lugar": "Cinemateca del Pacífico",
+    "imagen": "https://scontent.fclo8-1.fna.fbcdn.net/v/t39.30808-6/556931131_1139956024940129_9078469715220436244_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=PAlMv2xBpvkQ7kNvwFWFYPS&_nc_oc=Adn6tTDbxYbkx9yCS3N2yYX-m3KLcalNNQ_Du4Ga2-59osG1N_7xGJZZVp2EgZQvyxQ&_nc_zt=23&_nc_ht=scontent.fclo8-1.fna&_nc_gid=KxsP--cvxZUkWarLdjrOnw&oh=00_Aff8_TAygTejH97ZnLgnK--9t9bI8gFrBpMwbrgcElu9rw&oe=68EA48F7",
+    "orientacion": "vertical",
+    "duracion": "10 días",
+    "entrada": "Con boleto",
+    "precioCOP": 25000,
+    "precioPts": 250,
+    "descripcion": "Festival cinematográfico que presenta una selección de películas nacionales e internacionales. Incluye proyecciones, talleres, conversatorios y actividades relacionadas con el séptimo arte.",
+    "organizador": "Fundación Festival Internacional de Cine de Cali",
+    "edadMinima": "Todas las edades",
+    "horario": "6:00 PM - 11:00 PM",
+    "precios": {
+      "general": 25000,
+      "estudiantes": 15000,
+      "paseFestival": 80000
+    },
+    "ubicacion": "Cinemateca del Pacífico, Cali - Valle del Cauca",
+    "tipoEvento": "Festival Cinematográfico",
+    "tipoBoleto": "Digital y Físico",
+    "modalidad": "Presencial",
+    "actividades": [
+      "Proyecciones de películas nacionales e internacionales",
+      "Talleres de cine",
+      "Conversatorios con directores",
+      "Muestras especiales",
+      "Competencias de cortometrajes"
+    ],
+    "categorias": [
+      "Ficción",
+      "Documental",
+      "Cortometraje",
+      "Cine independiente",
+      "Cine latinoamericano"
+    ]
+  },
+  {
+    "id": "9",
+    "titulo": "Feria Internacional del Libro de Cali",
+    "categoria": "CULTURA",
+    "fecha": "2025-10-20T09:00:00-05:00",
+    "lugar": "Centro de Eventos Valle del Pacífico",
+    "imagen": "https://revistadc.com/wp-content/uploads/2023/09/375072581_1861084627626822_303216128745558000_n.jpg",
+    "orientacion": "vertical",
+    "duracion": "5 días",
+    "entrada": "Libre",
+    "precioCOP": 0,
+    "precioPts": 0,
+    "descripcion": "Evento literario que cuenta con la participación de autores, editoriales y actividades relacionadas con la literatura. Incluye presentaciones de libros, talleres de escritura y encuentros con autores.",
+    "organizador": "Cámara Colombiana del Libro",
+    "edadMinima": "Todas las edades",
+    "horario": "9:00 AM - 8:00 PM",
+    "precios": {
+      "entrada": "Libre",
+      "talleres": "Con costo adicional"
+    },
+    "ubicacion": "Centro de Eventos Valle del Pacífico, Cali - Valle del Cauca",
+    "tipoEvento": "Feria Literaria",
+    "tipoBoleto": "Entrada Libre",
+    "modalidad": "Presencial",
+    "actividades": [
+      "Presentaciones de libros",
+      "Talleres de escritura",
+      "Encuentros con autores",
+      "Firma de libros",
+      "Actividades infantiles",
+      "Conversatorios literarios"
+    ],
+    "editoriales": [
+      "Editoriales nacionales",
+      "Editoriales internacionales",
+      "Editoriales independientes",
+      "Editoriales universitarias"
+    ]
+  },
+  {
+    "id": "10",
+    "titulo": "ATP Cali Open - Torneo de Tenis",
+    "categoria": "DEPORTIVO",
+    "fecha": "2025-10-25T10:00:00-05:00",
+    "lugar": "Club Campestre de Cali",
+    "imagen": "https://i.ytimg.com/vi/z3ae9uvjZCM/maxresdefault.jpg",
+    "orientacion": "vertical",
+    "duracion": "7 días",
+    "entrada": "Con boleto",
+    "precioCOP": 50000,
+    "precioPts": 500,
+    "descripcion": "Torneo de tenis de la categoría 100 del circuito Challenger ATP. Participan tenistas profesionales nacionales e internacionales en competencias de singles y dobles.",
+    "organizador": "ATP Tour",
+    "edadMinima": "Todas las edades",
+    "horario": "10:00 AM - 6:00 PM",
+    "precios": {
+      "general": 50000,
+      "semifinal": 80000,
+      "final": 120000,
+      "paseCompleto": 200000
+    },
+    "ubicacion": "Club Campestre de Cali, Cali - Valle del Cauca",
+    "tipoEvento": "Torneo Deportivo",
+    "tipoBoleto": "Digital y Físico",
+    "modalidad": "Presencial",
+    "categorias": [
+      "Singles Masculino",
+      "Dobles Masculino",
+      "Singles Femenino",
+      "Dobles Femenino"
+    ],
+    "participantes": [
+      "Tenistas profesionales ATP",
+      "Tenistas nacionales",
+      "Tenistas internacionales",
+      "Wildcards locales"
+    ],
+    "premios": [
+      "Puntos ATP",
+      "Premio en efectivo",
+      "Trofeos",
+      "Reconocimientos especiales"
+    ]
+  },
+  {
+    "id": "11",
+    "titulo": "Festival Internacional de Poesía de Cali",
+    "categoria": "ACADEMICO",
+    "fecha": "2025-11-05T19:00:00-05:00",
+    "lugar": "Teatro Municipal Enrique Buenaventura",
+    "imagen": "https://cwmas.com.co/wp-content/uploads/2024/09/cali-se-llena-de-versos-el-festival-internacional-de-poesia-llega-a-la-sucursal.webp",
+    "orientacion": "vertical",
+    "duracion": "5 días",
+    "entrada": "Libre",
+    "precioCOP": 0,
+    "precioPts": 0,
+    "descripcion": "Evento literario que reúne a poetas nacionales e internacionales en diversas actividades y recitales. Incluye talleres de poesía, lecturas públicas y encuentros con autores.",
+    "organizador": "Fundación Festival Internacional de Poesía",
+    "edadMinima": "Todas las edades",
+    "horario": "7:00 PM - 10:00 PM",
+    "precios": {
+      "entrada": "Libre",
+      "talleres": "Con costo adicional"
+    },
+    "ubicacion": "Teatro Municipal Enrique Buenaventura, Cali - Valle del Cauca",
+    "tipoEvento": "Festival Literario",
+    "tipoBoleto": "Entrada Libre",
+    "modalidad": "Presencial",
+    "actividades": [
+      "Recitales de poesía",
+      "Talleres de escritura poética",
+      "Encuentros con poetas",
+      "Lecturas públicas",
+      "Conversatorios literarios",
+      "Presentaciones de libros"
+    ],
+    "participantes": [
+      "Poetas nacionales",
+      "Poetas internacionales",
+      "Poetas emergentes",
+      "Estudiantes de literatura"
+    ]
+  },
+  {
+    "id": "12",
+    "titulo": "Sucursal Fest - Festival Cultural",
+    "categoria": "CULTURA",
+    "fecha": "2025-11-10T15:00:00-05:00",
+    "lugar": "Parque del Acueducto",
+    "imagen": "https://rtvc-assets-radionica3.s3.amazonaws.com/s3fs-public/styles/1200x630/public/2025-07/Sucursal%20Fest.webp?itok=hGioEG-c",
+    "orientacion": "vertical",
+    "duracion": "3 días",
+    "entrada": "Con boleto",
+    "precioCOP": 40000,
+    "precioPts": 400,
+    "descripcion": "Festival cultural que integra muestras artísticas, talleres y foros. Incluye música en vivo, artes visuales, teatro callejero y actividades interactivas para toda la familia.",
+    "organizador": "Fundación Sucursal Fest",
+    "edadMinima": "Todas las edades",
+    "horario": "3:00 PM - 11:00 PM",
+    "precios": {
+      "general": 40000,
+      "estudiantes": 25000,
+      "paseCompleto": 80000
+    },
+    "ubicacion": "Parque del Acueducto, Cali - Valle del Cauca",
+    "tipoEvento": "Festival Cultural",
+    "tipoBoleto": "Digital y Físico",
+    "modalidad": "Presencial",
+    "actividades": [
+      "Música en vivo",
+      "Artes visuales",
+      "Teatro callejero",
+      "Talleres artísticos",
+      "Foros culturales",
+      "Actividades infantiles"
+    ],
+    "artistas": [
+      "Músicos locales",
+      "Artistas visuales",
+      "Grupos de teatro",
+      "Performers callejeros"
+    ]
+  },
+  {
+    "id": "13",
+    "titulo": "Saratoga - Concierto de Metal",
+    "categoria": "CONCIERTO",
+    "fecha": "2025-10-10T20:00:00-05:00",
+    "lugar": "Teatro Telepacífico",
+    "imagen": "https://static.wixstatic.com/media/a21980_0581279bbbd04625bc881e405675180e~mv2.jpg/v1/fill/w_740,h_416,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a21980_0581279bbbd04625bc881e405675180e~mv2.jpg",
+    "orientacion": "vertical",
+    "duracion": "2.5 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 120000,
+    "precioPts": 1200,
+    "descripcion": "La icónica banda española de metal Saratoga regresa a Cali después de seis años, prometiendo una noche inolvidable para los amantes del rock y el metal en español.",
+    "organizador": "Overline Music",
+    "edadMinima": "16 años",
+    "horario": "8:00 PM",
+    "precios": {
+      "general": 120000,
+      "vip": 200000,
+      "backstage": 350000
+    },
+    "ubicacion": "Teatro Telepacífico, Cali - Valle del Cauca",
+    "tipoEvento": "Concierto de Rock/Metal",
+    "tipoBoleto": "Digital y Físico",
+    "modalidad": "Presencial",
+    "genero": "Metal/Rock",
+    "artista": "Saratoga",
+    "nacionalidad": "España",
+    "canciones": [
+      "Éxitos clásicos de Saratoga",
+      "Nuevos temas del último álbum",
+      "Covers de metal internacional"
+    ]
+  },
+  {
+    "id": "14",
+    "titulo": "Alejandro Fernández - Gira Musical",
+    "categoria": "CONCIERTO",
+    "fecha": "2025-10-23T19:30:00-05:00",
+    "lugar": "Plaza de Toros Cañaveralejo",
+    "imagen": "https://concerts50.com/uploads/artist/2e/d0/alejandro-fern-ndez/artist_page/alejandro-fern-ndez.jpg",
+    "orientacion": "vertical",
+    "duracion": "3 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 180000,
+    "precioPts": 1800,
+    "descripcion": "El reconocido cantante mexicano Alejandro Fernández traerá su gira a Cali, deleitando al público con sus éxitos de música ranchera y pop.",
+    "organizador": "Live Nation Colombia",
+    "edadMinima": "Todas las edades",
+    "horario": "7:30 PM",
+    "precios": {
+      "general": 180000,
+      "preferencial": 250000,
+      "vip": 400000,
+      "palco": 600000
+    },
+    "ubicacion": "Plaza de Toros Cañaveralejo, Cali - Valle del Cauca",
+    "tipoEvento": "Concierto de Música Ranchera/Pop",
+    "tipoBoleto": "Digital y Físico",
+    "modalidad": "Presencial",
+    "genero": "Ranchera/Pop Latino",
+    "artista": "Alejandro Fernández",
+    "nacionalidad": "México",
+    "canciones": [
+      "Éxitos rancheros clásicos",
+      "Canciones de pop latino",
+      "Nuevos temas de su último álbum"
+    ]
+  },
+  {
+    "id": "15",
+    "titulo": "Eladio Carrión - Concierto de Trap/Reguetón",
+    "categoria": "CONCIERTO",
+    "fecha": "2025-10-11T20:00:00-05:00",
+    "lugar": "Diamante de Sóftbol",
+    "imagen": "https://concerts50.com/uploads/artist/71/1d/eladio-carrion/artist_page/eladio-carrion.jpg",
+    "orientacion": "vertical",
+    "duracion": "2 horas",
+    "entrada": "Con boleto",
+    "precioCOP": 160000,
+    "precioPts": 1600,
+    "descripcion": "El rapero y cantante puertorriqueño Eladio Carrión se presentará en Cali, ofreciendo su estilo único de trap y reguetón.",
+    "organizador": "Concerts50",
+    "edadMinima": "16 años",
+    "horario": "8:00 PM",
+    "precios": {
+      "general": 160000,
+      "vip": 250000,
+      "backstage": 400000
+    },
+    "ubicacion": "Diamante de Sóftbol, Cali - Valle del Cauca",
+    "tipoEvento": "Concierto de Trap/Reguetón",
+    "tipoBoleto": "Digital y Físico",
+    "modalidad": "Presencial",
+    "genero": "Trap/Reguetón",
+    "artista": "Eladio Carrión",
+    "nacionalidad": "Puerto Rico",
+    "canciones": [
+      "Éxitos de trap puertorriqueño",
+      "Colaboraciones con artistas latinos",
+      "Nuevos temas del último álbum"
+    ]
+  }
+]
