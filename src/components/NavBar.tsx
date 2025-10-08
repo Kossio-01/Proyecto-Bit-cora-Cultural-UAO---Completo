@@ -4,7 +4,6 @@ import PersonIcon from '@mui/icons-material/Person'
 import RedeemIcon from '@mui/icons-material/Redeem'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import SearchIcon from '@mui/icons-material/Search'
-import InfoIcon from '@mui/icons-material/Info'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -14,7 +13,6 @@ const items = [
   { label: 'Buscar', icon: <SearchIcon />, path: '/filtros' },
   { label: 'Favoritos', icon: <FavoriteIcon />, path: '/favoritos' },
   { label: 'Perfil', icon: <PersonIcon />, path: '/perfil' },
-  { label: 'Acerca', icon: <InfoIcon />, path: '/acerca' },
 ]
 
 export default function NavBar() {

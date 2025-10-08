@@ -58,14 +58,14 @@ export default function HeroSection() {
 
   useEffect(() => {
     fetchEvents().then((allEvents) => {
-      // Filtrar solo los eventos más importantes/populares
-      const importantEvents = allEvents.filter(event => 
+      // Filtrar solo los eventos más importantes/populares Y que tengan imagen para el Hero
+      const importantEvents = allEvents.filter(event => (
         event.titulo.includes('Jhonny Rivera') ||
         event.titulo.includes('Alejandro Fernández') ||
         event.titulo.includes('Festival Internacional de Cine') ||
         event.titulo.includes('ATP Cali Open') ||
         event.titulo.includes('Eladio Carrión')
-      )
+      ) && Boolean(event.imagen))
       setEvents(importantEvents)
     })
   }, [])
@@ -263,8 +263,8 @@ export default function HeroSection() {
               width: '100%',
             }}
           >
-        {/* Imagen actual */}
-        {currentEvent.imagen && (
+        {/* Mostrar SIEMPRE imagen en el Hero para consistencia visual */}
+        {currentEvent.imagen ? (
           <Box
             component="img"
             src={currentEvent.imagen}
@@ -300,14 +300,14 @@ export default function HeroSection() {
               '&:hover': {
                 transform: 'scale(1.05)',
                 filter: 'brightness(1.1)',
-                animation: 'none', // Pausa la animación en hover
+                animation: 'none',
               },
               transition: 'transform 0.3s ease-out, filter 0.3s ease-out',
             }}
           />
-        )}
+        ) : null}
 
-        {/* Imagen siguiente con Circle Reveal */}
+        {/* Imagen siguiente con Circle Reveal (solo si el siguiente tiene imagen) */}
         {isTransitioning && events[nextEventIndex]?.imagen && (
           <Box
             sx={{

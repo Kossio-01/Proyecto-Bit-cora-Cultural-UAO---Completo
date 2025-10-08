@@ -40,7 +40,60 @@ function EventCard({ event, onToggleFavorite }: { event: EventItem; onToggleFavo
         }
       }}
     >
-      {event.imagen && (
+      {/* Multimedia Content */}
+      {event.tipoMultimedia === 'video' && event.video ? (
+        event.video.includes('youtube.com') || event.video.includes('youtu.be') ? (
+          <Box sx={{ height: 250, width: '100%' }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src={`${event.video.replace('youtu.be/', 'youtube.com/embed/').replace('watch?v=', 'embed/')}?autoplay=1&mute=1&loop=1&playlist=${event.video.split('/').pop()?.split('?')[0]}`}
+              title={event.titulo}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ borderRadius: '8px' }}
+            />
+          </Box>
+        ) : (
+          <CardMedia 
+            component="video" 
+            height="250" 
+            width="100%"
+            src={event.video}
+            controls
+            autoPlay
+            muted
+            loop
+            sx={{ 
+              objectFit: 'cover',
+              flexShrink: 0
+            }}
+          />
+        )
+      ) : event.tipoMultimedia === 'audio' && event.audio ? (
+        <Box sx={{ 
+          height: 250, 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          backgroundColor: 'primary.main',
+          color: 'white',
+          flexDirection: 'column',
+          gap: 2
+        }}>
+          <Typography variant="h4">🎵</Typography>
+          <CardMedia 
+            component="audio" 
+            src={event.audio}
+            controls
+            sx={{ width: '80%' }}
+          />
+          <Typography variant="h6" sx={{ textAlign: 'center', px: 2 }}>
+            {event.titulo}
+          </Typography>
+        </Box>
+      ) : event.imagen ? (
         <CardMedia 
           component="img" 
           height="250" 
@@ -52,6 +105,17 @@ function EventCard({ event, onToggleFavorite }: { event: EventItem; onToggleFavo
             flexShrink: 0
           }}
         />
+      ) : (
+        <Box sx={{ 
+          height: 250, 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          backgroundColor: 'grey.200',
+          color: 'text.secondary'
+        }}>
+          <Typography variant="h6">📅 Sin multimedia</Typography>
+        </Box>
       )}
       <CardContent sx={{ 
         flexGrow: 1, 

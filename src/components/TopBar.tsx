@@ -17,8 +17,8 @@ import SearchIcon from '@mui/icons-material/Search'
 import PersonIcon from '@mui/icons-material/Person'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import RedeemIcon from '@mui/icons-material/Redeem'
-import HomeIcon from '@mui/icons-material/Home'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import HomeIcon from '@mui/icons-material/Home'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -89,6 +89,7 @@ export default function TopBar() {
     navigate('/filtros')
   }
 
+
   return (
     <>
       {/* Main Navigation Bar */}
@@ -115,19 +116,22 @@ export default function TopBar() {
                 objectFit: 'contain',
               }}
             />
-            <IconButton
-              onClick={() => handleNavigation('/')}
-              sx={{ 
-                color: 'primary.main',
-                transition: 'all 0.2s ease',
-                '&:hover': {
-                  backgroundColor: 'rgba(227, 6, 19, 0.1)',
-                  transform: 'scale(1.1)'
-                }
-              }}
-            >
-              <HomeIcon fontSize="large" />
-            </IconButton>
+            {/* Home Button - Solo en desktop */}
+            {!isMobile && (
+              <IconButton
+                onClick={() => handleNavigation('/')}
+                sx={{ 
+                  color: 'primary.main',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    backgroundColor: 'rgba(227, 6, 19, 0.1)',
+                    transform: 'scale(1.1)'
+                  }
+                }}
+              >
+                <HomeIcon fontSize="large" />
+              </IconButton>
+            )}
           </Box>
 
           {/* Center - Categories (Desktop only) */}
@@ -156,19 +160,21 @@ export default function TopBar() {
 
           {/* Right Side - User Actions */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            {/* Search Button */}
-            <IconButton
-              onClick={handleSearchClick}
-              sx={{
-                color: 'text.primary',
-                '&:hover': {
-                  backgroundColor: 'primary.light',
-                  color: 'white'
-                }
-              }}
-            >
-              <SearchIcon />
-            </IconButton>
+            {/* Search Button - Solo en desktop */}
+            {!isMobile && (
+              <IconButton
+                onClick={handleSearchClick}
+                sx={{
+                  color: 'text.primary',
+                  '&:hover': {
+                    backgroundColor: 'primary.light',
+                    color: 'white'
+                  }
+                }}
+              >
+                <SearchIcon />
+              </IconButton>
+            )}
 
             {!isMobile && (
               <>
@@ -203,22 +209,25 @@ export default function TopBar() {
               </>
             )}
             
-            <IconButton
-              onClick={handleUserMenuOpen}
-              sx={{
-                color: 'text.primary',
-                '&:hover': {
-                  backgroundColor: 'primary.light',
-                  color: 'white'
-                }
-              }}
-            >
-              <Avatar sx={{ width: 32, height: 32, bgcolor: 'primary.main' }}>
-                <PersonIcon />
-              </Avatar>
-            </IconButton>
+            {/* Avatar - Solo en desktop */}
+            {!isMobile && (
+              <IconButton
+                onClick={handleUserMenuOpen}
+                sx={{
+                  color: 'text.primary',
+                  '&:hover': {
+                    backgroundColor: 'primary.light',
+                    color: 'white'
+                  }
+                }}
+              >
+                <Avatar sx={{ width: 32, height: 32, bgcolor: 'primary.main' }}>
+                  <PersonIcon />
+                </Avatar>
+              </IconButton>
+            )}
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Solo en móvil */}
             {isMobile && (
               <IconButton
                 onClick={handleMobileMenuOpen}
@@ -272,8 +281,17 @@ export default function TopBar() {
             <ListItemText>{item.label}</ListItemText>
           </MenuItem>
         ))}
-        <MenuItem onClick={() => handleNavigation('/acerca')}>
-          <ListItemText>Acerca</ListItemText>
+        <MenuItem onClick={() => handleNavigation('/filtros')}>
+          <ListItemText>Buscar</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={() => handleNavigation('/puntos')}>
+          <ListItemText>Puntos</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={() => handleNavigation('/favoritos')}>
+          <ListItemText>Favoritos</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={() => handleNavigation('/perfil')}>
+          <ListItemText>Perfil</ListItemText>
         </MenuItem>
         {userNavItems.map((item) => (
           <MenuItem key={item.path} onClick={() => handleNavigation(item.path)}>
@@ -281,6 +299,9 @@ export default function TopBar() {
             <ListItemText>{item.label}</ListItemText>
           </MenuItem>
         ))}
+        <MenuItem onClick={() => handleNavigation('/acerca')}>
+          <ListItemText>Acerca</ListItemText>
+        </MenuItem>
       </Menu>
     </>
   )

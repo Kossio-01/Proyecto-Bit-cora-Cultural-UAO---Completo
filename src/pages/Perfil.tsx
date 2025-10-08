@@ -37,13 +37,38 @@ export default function Perfil() {
       <Divider />
       <div>
         <Typography variant="subtitle1" sx={{ mb: 1 }}>Próximos eventos (favoritos)</Typography>
-        <Stack spacing={2}>
+        <Stack direction="row" spacing={2} flexWrap="wrap">
           {favoriteEvents.map((e) => (
-            <Card key={e.id}>
-              {e.imagen && <CardMedia component="img" height="120" image={e.imagen} alt={e.titulo} />}
-              <CardContent>
-                <Typography variant="subtitle1">{e.titulo}</Typography>
-                <Typography variant="caption" color="text.secondary">{new Date(e.fecha).toLocaleString('es-CO')}</Typography>
+            <Card 
+              key={e.id}
+              sx={{
+                height: '450px',
+                width: '100%',
+                maxWidth: '350px',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              {e.imagen ? (
+                <CardMedia 
+                  component="img" 
+                  height="250" 
+                  image={e.imagen} 
+                  alt={e.titulo}
+                  sx={{ objectFit: 'cover', flexShrink: 0 }}
+                />
+              ) : (
+                <CardMedia 
+                  component="div" 
+                  sx={{ height: 250, bgcolor: 'grey.200' }}
+                />
+              )}
+              <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                <Typography variant="subtitle1" sx={{ mb: 0.5 }}>{e.titulo}</Typography>
+                <Typography variant="caption" color="text.secondary" sx={{ mb: 0.5 }}>
+                  {new Date(e.fecha).toLocaleString('es-CO')}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">{e.lugar}</Typography>
               </CardContent>
             </Card>
           ))}

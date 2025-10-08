@@ -64,7 +64,62 @@ export default function DetalleEvento() {
 
   return (
     <Card>
-      {event.imagen && (
+      {/* Multimedia Content */}
+      {event.tipoMultimedia === 'video' && event.video ? (
+        event.video.includes('youtube.com') || event.video.includes('youtu.be') ? (
+          <Box sx={{ height: imageHeight, width: '100%' }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src={`${event.video.replace('youtu.be/', 'youtube.com/embed/').replace('watch?v=', 'embed/')}?autoplay=1&mute=1&loop=1&playlist=${event.video.split('/').pop()?.split('?')[0]}`}
+              title={event.titulo}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ borderRadius: '8px' }}
+            />
+          </Box>
+        ) : (
+          <CardMedia 
+            component="video" 
+            height={imageHeight}
+            src={event.video}
+            controls
+            autoPlay
+            muted
+            loop
+            sx={{
+              objectFit: 'contain',
+              objectPosition: 'center',
+              width: '100%',
+              backgroundColor: '#f5f5f5'
+            }}
+          />
+        )
+      ) : event.tipoMultimedia === 'audio' && event.audio ? (
+        <Box sx={{ 
+          height: imageHeight, 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          backgroundColor: 'primary.main',
+          color: 'white',
+          flexDirection: 'column',
+          gap: 3,
+          px: 4
+        }}>
+          <Typography variant="h2">🎵</Typography>
+          <Typography variant="h4" sx={{ textAlign: 'center', mb: 2 }}>
+            {event.titulo}
+          </Typography>
+          <CardMedia 
+            component="audio" 
+            src={event.audio}
+            controls
+            sx={{ width: '100%', maxWidth: '500px' }}
+          />
+        </Box>
+      ) : event.imagen ? (
         <CardMedia 
           component="img" 
           height={imageHeight}
@@ -77,6 +132,17 @@ export default function DetalleEvento() {
             backgroundColor: '#f5f5f5'
           }}
         />
+      ) : (
+        <Box sx={{ 
+          height: imageHeight, 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          backgroundColor: 'grey.200',
+          color: 'text.secondary'
+        }}>
+          <Typography variant="h4">📅 Sin multimedia</Typography>
+        </Box>
       )}
       <CardContent>
         <Stack spacing={2}>

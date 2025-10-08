@@ -35,24 +35,24 @@ export default function Calendario() {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
-          {/* Calendario - Lado izquierdo */}
-          <Grid item xs={12} md={7}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'flex-start' }}>
+          {/* Calendario - Lado izquierdo (ancho fijo) */}
+          <Box sx={{ width: { xs: '100%', md: 360 }, flex: '0 0 auto' }}>
             <Calendar 
               onEventClick={handleEventClick}
               onDateClick={handleDateClick}
             />
-          </Grid>
+          </Box>
 
-          {/* Lista de eventos marcados - Lado derecho */}
-          <Grid item xs={12} md={5}>
-            <Card elevation={2}>
-              <CardContent>
+          {/* Lista de eventos marcados - Lado derecho con panel desplazable */}
+          <Box sx={{ flex: 1, width: '100%' }}>
+            <Card elevation={2} sx={{ maxHeight: { xs: 'none', md: '70vh' }, overflowY: { md: 'auto' } }}>
+              <CardContent sx={{ pt: 2 }}>
                 <Typography variant="subtitle1" fontWeight={600} sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
                   <EventIcon fontSize="small" />
                   Mis Eventos ({calendarStore.events.length})
                 </Typography>
-                
+
                 {calendarStore.events.length === 0 ? (
                   <Box sx={{ textAlign: 'center', py: 4 }}>
                     <Typography variant="body2" color="text.secondary">
@@ -63,17 +63,24 @@ export default function Calendario() {
                     </Typography>
                   </Box>
                 ) : (
-                  <Grid container spacing={2}>
+                  <Grid container spacing={2} sx={{ pb: 1 }}>
                     {calendarStore.events.map((event) => (
-                      <Grid item xs={12} key={event.id}>
+                      <Grid item xs={12} key={event.id} sx={{ width: '100%' }}>
                         <Card 
                           sx={{ 
+                            width: '100%',
                             cursor: 'pointer',
-                            display: 'flex',
-                            flexDirection: 'row',
+                            display: 'grid',
+                            gridTemplateColumns: '1fr auto',
                             alignItems: 'center',
-                            p: 2,
-                            mb: 2,
+                            px: 2,
+                            py: 1,
+                            mb: 1,
+                            height: 92,
+                            minHeight: 92,
+                            maxHeight: 92,
+                            boxSizing: 'border-box',
+                            overflow: 'hidden',
                             '&:hover': { 
                               transform: 'translateY(-2px)',
                               boxShadow: 4
@@ -82,11 +89,11 @@ export default function Calendario() {
                           }}
                           onClick={() => handleEventClick(event as EventItem)}
                         >
-                          <Box sx={{ flex: 1 }}>
-                            <Typography variant="h6" fontWeight={600} sx={{ mb: 1 }}>
+                          <Box sx={{ minWidth: 0, pr: 2 }}>
+                            <Typography variant="subtitle1" fontWeight={700} noWrap sx={{ lineHeight: 1.2 }}>
                               {event.titulo}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
+                            <Typography variant="body2" color="text.secondary" noWrap sx={{ lineHeight: 1.2 }}>
                               📅 {new Date(event.fecha).toLocaleDateString('es-CO', {
                                 weekday: 'short',
                                 day: 'numeric',
@@ -95,11 +102,11 @@ export default function Calendario() {
                                 minute: '2-digit'
                               })}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" noWrap sx={{ lineHeight: 1.2 }}>
                               📍 {event.lugar}
                             </Typography>
                           </Box>
-                          <Box sx={{ ml: 2 }}>
+                          <Box sx={{ justifySelf: 'end' }}>
                             <Chip 
                               label={event.categoria} 
                               size="medium" 
@@ -113,8 +120,8 @@ export default function Calendario() {
                 )}
               </CardContent>
             </Card>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Box>
     </Container>
   )
