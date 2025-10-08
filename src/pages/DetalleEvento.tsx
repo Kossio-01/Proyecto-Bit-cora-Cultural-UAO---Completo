@@ -6,8 +6,10 @@ import ShareIcon from '@mui/icons-material/Share'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { useFavorites } from '../store/favorites'
 import { useCalendar } from '../store/calendar'
+import { useRewards } from '../store/rewards'
 
 export default function DetalleEvento() {
   const { id } = useParams()
@@ -17,6 +19,7 @@ export default function DetalleEvento() {
   const [snackbarMessage, setSnackbarMessage] = useState('')
   const favorites = useFavorites()
   const calendar = useCalendar()
+  const rewards = useRewards()
 
   useEffect(() => {
     fetchEvents().then((all) => setEvent(all.find((e) => e.id === id) ?? null))
@@ -54,8 +57,71 @@ export default function DetalleEvento() {
       imagen: event.imagen
     })
 
-    setSnackbarMessage('Evento agregado a tu calendario personal')
+    setSnackbarMessage('✅ Evento agregado a tu calendario. Puedes quitarlo desde la página de Calendario.')
     setSnackbarOpen(true)
+  }
+
+  // Función para comprar con puntos
+  const handlePurchaseWithPoints = () => {
+    if (!event || !event.precioPts) return
+    
+    const success = rewards.purchaseWithPoints(event.precioPts, event.titulo)
+    if (success) {
+      setSnackbarMessage(`¡Entrada comprada con ${event.precioPts} puntos!`)
+      setSnackbarOpen(true)
+    } else {
+      setSnackbarMessage(`No tienes suficientes puntos. Necesitas ${event.precioPts} puntos.`)
+      setSnackbarOpen(true)
+    }
+  }
+
+
+  // Función mejorada para compartir
+  const handleShare = async () => {
+    if (!event) return
+
+    const shareData = {
+      title: event.titulo,
+      text: `${event.descripcion}\n\nFecha: ${new Date(event.fecha).toLocaleDateString('es-CO')}\nLugar: ${event.lugar}`,
+      url: window.location.href
+    }
+
+    // Intentar usar la API nativa de compartir
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData)
+        // Verificar si puede ganar puntos (anti-spam)
+        if (rewards.canEarnPointsForShare(event.id)) {
+          rewards.addPoints(5, 'Compartiste evento en redes sociales')
+          rewards.markEventAsShared(event.id)
+          setSnackbarMessage('¡Evento compartido! +5 puntos ganados')
+        } else {
+          setSnackbarMessage('¡Evento compartido! (Ya ganaste puntos por este evento)')
+        }
+        setSnackbarOpen(true)
+      } catch (err) {
+        console.log('Error al compartir:', err)
+      }
+    } else {
+      // Fallback: copiar al portapapeles
+      const textToCopy = `${shareData.title}\n${shareData.text}\n${shareData.url}`
+      try {
+        await navigator.clipboard.writeText(textToCopy)
+        // Verificar si puede ganar puntos (anti-spam)
+        if (rewards.canEarnPointsForShare(event.id)) {
+          rewards.addPoints(5, 'Compartiste evento en redes sociales')
+          rewards.markEventAsShared(event.id)
+          setSnackbarMessage('¡Enlace copiado al portapapeles! +5 puntos ganados')
+        } else {
+          setSnackbarMessage('¡Enlace copiado al portapapeles! (Ya ganaste puntos por este evento)')
+        }
+        setSnackbarOpen(true)
+      } catch (err) {
+        // Fallback final: mostrar modal con el texto
+        setSnackbarMessage('Función de compartir no disponible en este navegador')
+        setSnackbarOpen(true)
+      }
+    }
   }
 
   // Determinar si la imagen es vertical o horizontal
@@ -202,10 +268,21 @@ export default function DetalleEvento() {
             <Button 
               variant="outlined" 
               startIcon={<ShareIcon />} 
-              onClick={() => navigator.share?.({ title: event.titulo, text: event.descripcion, url: window.location.href })}
+              onClick={handleShare}
             >
               Compartir
             </Button>
+            {event.precioPts && event.precioPts > 0 && (
+              <Button 
+                variant="contained" 
+                color="secondary"
+                startIcon={<ShoppingCartIcon />} 
+                onClick={handlePurchaseWithPoints}
+                disabled={rewards.points < event.precioPts}
+              >
+                Comprar con {event.precioPts} pts
+              </Button>
+            )}
           </Box>
         </Stack>
       </CardContent>

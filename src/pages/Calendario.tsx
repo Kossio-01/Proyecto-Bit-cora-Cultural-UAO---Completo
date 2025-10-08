@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Box, Typography, Container, Grid, Card, CardContent, Chip, Stack } from '@mui/material'
+import { Box, Typography, Container, Grid, Card, CardContent, Chip, Stack, IconButton, Tooltip } from '@mui/material'
 import Calendar from '../components/Calendar'
 import { type EventItem } from '../services/events'
 import { useNavigate } from 'react-router-dom'
 import { useCalendar } from '../store/calendar'
 import EventIcon from '@mui/icons-material/Event'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 export default function Calendario() {
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null)
@@ -15,6 +16,11 @@ export default function Calendario() {
   const handleEventClick = (event: EventItem) => {
     setSelectedEvent(event)
     navigate(`/eventos/${event.id}`)
+  }
+
+  const handleRemoveEvent = (eventId: string, event: React.MouseEvent) => {
+    event.stopPropagation() // Evitar que se ejecute handleEventClick
+    calendarStore.removeEvent(eventId)
   }
 
   const handleDateClick = (date: Date) => {
@@ -71,7 +77,7 @@ export default function Calendario() {
                             width: '100%',
                             cursor: 'pointer',
                             display: 'grid',
-                            gridTemplateColumns: '1fr auto',
+                            gridTemplateColumns: '1fr auto auto',
                             alignItems: 'center',
                             px: 2,
                             py: 1,
@@ -112,6 +118,23 @@ export default function Calendario() {
                               size="medium" 
                               color="primary"
                             />
+                          </Box>
+                          <Box sx={{ justifySelf: 'end', ml: 1 }}>
+                            <Tooltip title="Quitar del calendario">
+                              <IconButton 
+                                size="small" 
+                                color="error"
+                                onClick={(e) => handleRemoveEvent(event.id, e)}
+                                sx={{ 
+                                  '&:hover': { 
+                                    backgroundColor: 'error.light',
+                                    color: 'white'
+                                  }
+                                }}
+                              >
+                                <DeleteIcon fontSize="small" />
+                              </IconButton>
+                            </Tooltip>
                           </Box>
                         </Card>
                       </Grid>

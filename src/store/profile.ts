@@ -18,6 +18,6 @@ export const useProfile = create<ProfileState>(() => ({
 	attended: 12,
 	favoritesCount: 8,
 	upcoming: 5,
-	interests: ['Concierto', 'Arte', 'Cine', 'Charlas'],
+	interests: ['Conciertos', 'Cultura', 'Deportes', 'Académico'],
 	setInterests: () => {},
 }))

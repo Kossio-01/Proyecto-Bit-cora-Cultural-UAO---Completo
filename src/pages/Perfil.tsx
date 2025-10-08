@@ -1,27 +1,38 @@
 import { useEffect, useState } from 'react'
-import { Avatar, Chip, Divider, Paper, Stack, Typography, Card, CardMedia, CardContent } from '@mui/material'
+import { Avatar, Chip, Divider, Paper, Stack, Typography, Card, CardMedia, CardContent, Box } from '@mui/material'
 import { useProfile } from '../store/profile'
 import { useFavorites } from '../store/favorites'
+import { useCalendar } from '../store/calendar'
+import { useRewards } from '../store/rewards'
 import { fetchEvents, type EventItem } from '../services/events'
+import { useNavigate } from 'react-router-dom'
 
 export default function Perfil() {
   const profile = useProfile()
   const fav = useFavorites()
+  const calendar = useCalendar()
+  const rewards = useRewards()
+  const navigate = useNavigate()
   const [events, setEvents] = useState<EventItem[]>([])
 
   useEffect(() => { fetchEvents().then(setEvents) }, [])
   const favoriteEvents = events.filter((e) => fav.isFavorite(e.id))
+  
+  // Calcular estadísticas dinámicas
+  const eventosCompartidos = rewards.history.filter(h => h.label.includes('Compartiste')).length
+  const eventosAgendados = calendar.events.length
+  const eventosFavoritos = favoriteEvents.length
 
   return (
-    <Stack spacing={2}>
+    <Stack spacing={2} sx={{ px: { xs: 2, md: 0 } }}>
       <Paper variant="outlined" sx={{ p: 3, textAlign: 'center', bgcolor: 'grey.50' }}>
         <Avatar src={profile.avatarUrl} sx={{ width: 88, height: 88, mx: 'auto', mb: 1 }} />
         <Typography variant="h6">{profile.name}</Typography>
         <Typography variant="body2" color="text.secondary">{profile.email}</Typography>
         <Stack direction="row" spacing={2} justifyContent="center" sx={{ mt: 2 }}>
-          <StatBox label="Eventos asistidos" value={profile.attended} />
-          <StatBox label="Favoritos" value={profile.favoritesCount} />
-          <StatBox label="Por asistir" value={profile.upcoming} />
+          <StatBox label="Eventos favoritos" value={eventosFavoritos} />
+          <StatBox label="Eventos compartidos" value={eventosCompartidos} />
+          <StatBox label="Eventos agendados" value={eventosAgendados} />
         </Stack>
       </Paper>
 
@@ -36,17 +47,34 @@ export default function Perfil() {
 
       <Divider />
       <div>
-        <Typography variant="subtitle1" sx={{ mb: 1 }}>Próximos eventos (favoritos)</Typography>
-        <Stack direction="row" spacing={2} flexWrap="wrap">
+        <Typography variant="subtitle1" sx={{ mb: 2 }}>Próximos eventos (favoritos)</Typography>
+        <Box sx={{ 
+          display: 'grid', 
+          gridTemplateColumns: { 
+            xs: '1fr', 
+            sm: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            md: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            lg: 'repeat(auto-fit, minmax(320px, 1fr))' 
+          }, 
+          gap: 3,
+          overflow: 'hidden'
+        }}>
           {favoriteEvents.map((e) => (
             <Card 
               key={e.id}
+              onClick={() => navigate(`/eventos/${e.id}`)}
               sx={{
                 height: '450px',
                 width: '100%',
                 maxWidth: '350px',
                 display: 'flex',
                 flexDirection: 'column',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  boxShadow: 4,
+                }
               }}
             >
               {e.imagen ? (
@@ -75,7 +103,7 @@ export default function Perfil() {
           {favoriteEvents.length === 0 && (
             <Typography color="text.secondary">No tienes eventos favoritos aún.</Typography>
           )}
-        </Stack>
+        </Box>
       </div>
     </Stack>
   )
